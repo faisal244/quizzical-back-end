@@ -33,10 +33,7 @@ const login = async (_, { loginInput }) => {
         firstName: user.get("firstName"),
         lastName: user.get("lastName"),
         email: user.get("email"),
-        phoneNumber: user.get("phoneNumber"),
         imageUrl: user.get("imageUrl"),
-        userType: user.get("userType"),
-        address: user.get("address"),
       },
     };
   } catch (error) {

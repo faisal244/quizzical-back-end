@@ -1,7 +1,6 @@
 const bcrypt = require("bcrypt");
 const { Schema, model } = require("mongoose");
 
-
 const userSchema = {
   firstName: {
     type: String,
@@ -32,18 +31,6 @@ const userSchema = {
     maxLength: 50,
     trim: true,
   },
-  phoneNumber: {
-    type: String,
-    required: true,
-    minLength: 8,
-    maxLength: 20,
-    trim: true,
-  },
-  userType: {
-    type: String,
-    required: true,
-    enum: ["organizer", "user"],
-  },
 };
 
 const options = {
@@ -68,10 +55,6 @@ schema.pre("save", async function (next) {
   }
 
   next();
-});
-
-schema.virtual("fullName").get(function () {
-  return `${this.firstName} ${this.lastName}`;
 });
 
 const User = model("User", schema);

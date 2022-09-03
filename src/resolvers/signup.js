@@ -1,4 +1,4 @@
-const { User, AddressLookup } = require("../models");
+const { User } = require("../models");
 
 const signup = async (_, { signupInput }) => {
   const user = await User.findOne({ email: signupInput.email });
@@ -11,22 +11,7 @@ const signup = async (_, { signupInput }) => {
     throw new ApolloError("Failed to signup");
   }
 
-  const address = await AddressLookup.findOne({
-    addresses: {
-      $elemMatch: {
-        _id: signupInput.address,
-      },
-    },
-  });
-
-  const yourAddress = address
-    .get("addresses")
-    .find((address) => address.get("_id").toString() === signupInput.address);
-
-  await User.create({
-    ...signupInput,
-    address: yourAddress,
-  });
+  await User.create(signupInput);
 
   return { success: true };
 };
