@@ -75,10 +75,6 @@ schema.virtual("fullName").get(function () {
   return `${this.firstName} ${this.lastName}`;
 });
 
-schema.virtual("petCount").get(function () {
-  return this.pets.length;
-});
-
 const User = model("User", schema);
 
 module.exports = User;
