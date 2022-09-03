@@ -40,26 +40,11 @@ const userSchema = {
     maxLength: 20,
     trim: true,
   },
-  imageUrl: {
-    type: String,
-    required: true,
-    trim: true,
-  },
   userType: {
     type: String,
     required: true,
-    enum: ["petOwner", "petCarer"],
+    enum: ["organizer", "user"],
   },
-  address: {
-    type: Address,
-    required: true,
-  },
-  pets: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: "Pet",
-    },
-  ],
 };
 
 const options = {
