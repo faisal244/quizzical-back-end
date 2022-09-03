@@ -1,11 +1,11 @@
 const connectToDatabase = require("../config/connection");
-const { User } = require("../models");
+const { AddressLookup } = require("../models");
 
 const clearCollections = async () => {
-  await User.deleteMany({});
+  await AddressLookup.deleteMany({});
 };
 
-const users = [
+const addresses = [
   {
     firstName: "james",
     lastName: "smith",
@@ -49,7 +49,7 @@ const init = async () => {
 
     await clearCollections();
 
-    await User.insertMany(users);
+    await AddressLookup.insertMany(addresses);
   } catch (error) {
     console.log(`[ERROR]: Failed to seed DB | ${error.message}`);
   }
