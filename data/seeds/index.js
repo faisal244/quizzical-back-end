@@ -1,5 +1,5 @@
-const connectToDatabase = require("../config/connection");
-const { AddressLookup } = require("../models");
+const connectToDatabase = require("../../src/config/connection");
+const { AddressLookup } = require("../../src/models");
 
 const clearCollections = async () => {
   await AddressLookup.deleteMany({});
