@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon src/index.js",
+    "seeds": "node src/seeds/index.js",
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
@@ -25,5 +27,8 @@
     "dotenv": "^16.0.2",
     "graphql": "^16.6.0",
     "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.19"
   }
 }
