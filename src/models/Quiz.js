@@ -1,16 +1,12 @@
-const bcrypt = require("bcrypt");
 const { Schema, model } = require("mongoose");
 
-
-const userSchema = {
-  firstName: {
-    type: String,
+const quizSchema = {
+  dateCreated: {
+    type: Date,
     required: true,
-    minLength: 2,
-    maxLength: 50,
     trim: true,
   },
-  lastName: {
+  participants: {
     type: String,
     required: true,
     minLength: 2,
