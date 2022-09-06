@@ -18,6 +18,12 @@ const typeDefs = gql`
     user: User!
   }
 
+  # type Quiz {}
+
+  type Query {
+    foo: String
+  }
+
   input LoginInput {
     email: String!
     password: String!
@@ -30,13 +36,12 @@ const typeDefs = gql`
     password: String!
   }
 
-  type Query {
-    foo: String
-  }
+  # input CreateQuizInput {}
 
   type Mutation {
     login(loginInput: LoginInput!): LoginSuccess
     signup(signupInput: SignupInput!): SignupSuccess
+    # createQuiz(createQuizInput: CreateQuizInput!): Quiz
   }
 `;
 

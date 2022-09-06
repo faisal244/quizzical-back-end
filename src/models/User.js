@@ -31,6 +31,7 @@ const userSchema = {
     maxLength: 50,
     trim: true,
   },
+  // quizzes: []
 };
 
 const options = {
