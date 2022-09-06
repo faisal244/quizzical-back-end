@@ -1,27 +1,19 @@
 const { Schema, model } = require("mongoose");
+// const { Questions } = require("./Question");
 
 const quizSchema = {
-  // add fields for quiz here
-  // MUST be in line with response from API
-  // category
-  // type
-  // difficulty
-  // questions: [{
-  // text
-  // correct answer
-  // options
-  // }]
+	Questions: [
+		{
+			type: Schema.Types.ObjectId,
+			ref: "Question",
+		},
+	],
+
+	// add fields for quiz here
+	// MUST be in line with response from AP
 };
 
-const options = {
-  toJSON: {
-    virtuals: true,
-    getters: true,
-  },
-  id: false,
-};
-
-const schema = new Schema(quizSchema, options);
+const schema = new Schema(quizSchema);
 
 const Quiz = model("Quiz", schema);
 
