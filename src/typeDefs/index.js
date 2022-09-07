@@ -11,7 +11,7 @@ const typeDefs = gql`
   }
   type Question {
     question: String!
-    options: [String!]
+    incorrectAnswers: [String!]
     correctAnswer: String!
   }
   type LoginSuccess {
@@ -20,7 +20,8 @@ const typeDefs = gql`
     user: User!
   }
   type QuizResponse {
-    question: String!
+    id: ID!
+    questions: [Question]
     category: String!
     difficulty: String!
     type: String!
@@ -38,10 +39,18 @@ const typeDefs = gql`
     email: String!
     password: String!
   }
+
+  input QuestionsInput {
+    question: String!
+    incorrectAnswers: [String!]
+    correctAnswer: String!
+  }
+
   input CreateQuizInput {
     category: String!
     difficulty: String!
     type: String!
+    questions: [QuestionsInput]
   }
   type Mutation {
     login(loginInput: LoginInput!): LoginSuccess
