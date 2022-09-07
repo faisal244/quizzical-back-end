@@ -39,7 +39,6 @@ const typeDefs = gql`
     password: String!
   }
   input CreateQuizInput {
-    question: String!
     category: String!
     difficulty: String!
     type: String!

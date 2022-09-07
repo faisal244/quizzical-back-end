@@ -1,30 +1,34 @@
 const { Schema, model } = require("mongoose");
-// const { Questions } = require("./Question");
+const Question = require("./Question");
 
 const quizSchema = {
-	
   category: {
     type: String,
+    require: true,
   },
-  // type
   type: {
     type: String,
-    enum: ["boolean", "multiple"],
+    require: true,
   },
-  // difficulty
   difficulty: {
     type: String,
-    enum: ["easy", "medium", "hard"],
+    require: true,
   },
-  question: {
-    type: String,
-  },
-
-  // add fields for quiz here
-  // MUST be in line with response from AP
+  questions: [
+    {
+      type: Question,
+    },
+  ],
 };
 
-const schema = new Schema(quizSchema);
+const options = {
+  toJSON: {
+    virtuals: true,
+    getters: true,
+  },
+};
+
+const schema = new Schema(quizSchema, options);
 
 const Quiz = model("Quiz", schema);
 
