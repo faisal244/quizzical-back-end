@@ -1,10 +1,12 @@
-const { ApolloError } = require("apollo-server");
+const { AuthenticationError, ApolloError } = require("apollo-server");
 
 const Quiz = require("../models/Quiz.js");
 
-const creatingQuiz = async (_, { createQuizInput }) => {
+const creatingQuiz = async (_, { createQuizInput }, { user }) => {
   try {
-    // console.log(createQuizInput);
+    if (!user) {
+      return new AuthenticationError("You are not Authorised Buddy Try Again!");
+    }
 
     // destructurer the create quiz args object
 
