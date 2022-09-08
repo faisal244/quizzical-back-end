@@ -26,9 +26,12 @@ const typeDefs = gql`
     difficulty: String!
     type: String!
   }
-  type Query {
-    foo: String
+
+  type QuizesResponse {
+    success: Boolean!
+    quizzes: [QuizResponse]
   }
+
   input LoginInput {
     email: String!
     password: String!
@@ -51,6 +54,11 @@ const typeDefs = gql`
     difficulty: String!
     type: String!
     questions: [QuestionsInput]
+  }
+  type Query {
+    getQuizes: QuizesResponse
+    getQuiz(id: ID!): QuizResponse
+    getMyQuiz: QuizesResponse
   }
   type Mutation {
     login(loginInput: LoginInput!): LoginSuccess
