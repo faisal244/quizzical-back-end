@@ -1,49 +1,38 @@
 const { gql } = require("apollo-server");
-
 const typeDefs = gql`
-  type Category {
-    name: String!
-  }
-
   type User {
     id: ID!
     firstName: String!
     lastName: String!
     email: String!
   }
-
   type SignupSuccess {
     success: Boolean!
   }
-
   type Question {
     question: String!
-    options: [String!]
+    incorrectAnswers: [String!]
     correctAnswer: String!
   }
-
   type LoginSuccess {
     success: Boolean!
     token: String!
     user: User!
   }
-
   type QuizResponse {
-    numberOfQuestions: Int!
-    categories: [Category]
+    id: ID!
+    questions: [Question]
+    category: String!
     difficulty: String!
     type: String!
   }
-
   type Query {
     foo: String
   }
-
   input LoginInput {
     email: String!
     password: String!
   }
-
   input SignupInput {
     firstName: String!
     lastName: String!
@@ -51,29 +40,22 @@ const typeDefs = gql`
     password: String!
   }
 
-  input CategoryInput {
-    name: String!
-  }
-
-  input QuestionInput {
+  input QuestionsInput {
     question: String!
-    options: [String!]
+    incorrectAnswers: [String!]
     correctAnswer: String!
   }
 
   input CreateQuizInput {
-    numberOfQuestions: Int!
-    categories: [CategoryInput]
+    category: String!
     difficulty: String!
     type: String!
-    questions: [QuestionInput]
+    questions: [QuestionsInput]
   }
-
   type Mutation {
     login(loginInput: LoginInput!): LoginSuccess
     signup(signupInput: SignupInput!): SignupSuccess
     createQuiz(createQuizInput: CreateQuizInput!): QuizResponse
   }
 `;
-
 module.exports = typeDefs;
