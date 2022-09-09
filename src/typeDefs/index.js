@@ -47,11 +47,13 @@ const typeDefs = gql`
   }
 
   input CreateQuizInput {
+    title: String!
     category: String!
     difficulty: String!
     type: String!
     questions: [QuestionsInput]
   }
+
   type Mutation {
     login(loginInput: LoginInput!): LoginSuccess
     signup(signupInput: SignupInput!): SignupSuccess
