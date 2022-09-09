@@ -1,6 +1,7 @@
 const { AuthenticationError, ApolloError } = require("apollo-server");
 
 const Quiz = require("../models/Quiz.js");
+const User = require("../models/User.js");
 
 const creatingQuiz = async (_, { createQuizInput }, { user }) => {
   try {
@@ -20,7 +21,7 @@ const creatingQuiz = async (_, { createQuizInput }, { user }) => {
       questions,
     });
 
-    console.log(newQuiz);
+    await User.findByIdAndUpdate(user.id, { $push: { quizzes: newQuiz._id } });
 
     return newQuiz;
   } catch (error) {
