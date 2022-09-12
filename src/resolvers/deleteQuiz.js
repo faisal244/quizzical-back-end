@@ -7,6 +7,7 @@ const deleteQuiz = async (_, { id }) => {
     console.log(id);
     const deletedItem = await Quiz.findByIdAndDelete(id);
     console.log(deletedItem);
+    return deletedItem;
   } catch (error) {
     console.log(error.message);
     return new ApolloError("Failed to delete quiz");
