@@ -4,6 +4,7 @@ const createQuiz = require("./createQuiz");
 const getMyQuiz = require("./getMyQuiz");
 const getQuiz = require("./getQuiz");
 const getQuizes = require("./getQuizes");
+const deleteQuiz = require("./deleteQuiz");
 // const findQuizById = require("./findQuizById");
 
 const resolvers = {
@@ -16,7 +17,7 @@ const resolvers = {
     login,
     signup,
     createQuiz,
-    // findQuizById,
+    deleteQuiz,
   },
 };
 
