@@ -68,6 +68,7 @@ const typeDefs = gql`
 		login(loginInput: LoginInput!): LoginSuccess
 		signup(signupInput: SignupInput!): SignupSuccess
 		createQuiz(createQuizInput: CreateQuizInput!): QuizResponse
+		deleteQuiz(id: ID!): QuizResponse
 	}
 `;
 module.exports = typeDefs;
