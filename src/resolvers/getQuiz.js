@@ -4,9 +4,9 @@ const Quiz = require("../models/Quiz.js");
 
 const getQuiz = async (_, { id }) => {
   try {
-    // if (!user) {
-    //   return new AuthenticationError("Unauthrized user");
-    // }
+    if (!user) {
+      return new AuthenticationError("Unauthorized user");
+    }
     return await Quiz.findById(id);
   } catch (error) {
     console.log(error.message);
