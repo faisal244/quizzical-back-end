@@ -24,9 +24,9 @@ A user will be able sign up/login, from there they will be able to create a quiz
 
 Deployed URL: [https://whispering-woodland-03742.herokuapp.com/](https://whispering-woodland-03742.herokuapp.com/)
 
-Github front-end repository: [https://github.com/faisal244/project-dynamite-front-end](https://github.com/faisal244/project-dynamite-front-end)
+Github front-end repository: [https://github.com/faisal244/quizzical-front-end](https://github.com/faisal244/quizzical-front-end)
 
-Github back-end repository: [https://github.com/faisal244/project-dynamite-back-end](https://github.com/faisal244/project-dynamite-back-end)
+Github back-end repository: [https://github.com/faisal244/quizzical-back-end](https://github.com/faisal244/quizzical-back-end)
 
 Google Slides: [https://docs.google.com/presentation/d/1YOZZd2dNTa-U7u3HH1mEhfEBUx6RuF2ioFJ30Oh1Nf4/edit#slide=id.g1393452a5d8_0_141](https://docs.google.com/presentation/d/1YOZZd2dNTa-U7u3HH1mEhfEBUx6RuF2ioFJ30Oh1Nf4/edit#slide=id.g1393452a5d8_0_141)
 
@@ -54,13 +54,13 @@ The mutations we used:
 ## Installation
 
 ```
-git clone git@github.com:faisal244/project-dynamite-front-end.git
-cd project-dynamite-front-end
+git clone git@github.com:faisal244/quizzical-front-end.git
+cd quizzical-front-end
 npm install
 ```
 
 ```
-git clone git@github.com:faisal244/project-dynamite-back-end.git
-cd project-dynamite-back-end
+git clone git@github.com:faisal244/quizzical-back-end.git
+cd quizzical-back-end
 npm install
 ```
